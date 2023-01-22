@@ -8,7 +8,7 @@ import utilities.Driver;
 public class TechGlobalDynamicElementsPage extends TechGlobalBasePage{
 
     public TechGlobalDynamicElementsPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
+        super();
     }
 
     @FindBy(css = "p[id*='box_1_']")

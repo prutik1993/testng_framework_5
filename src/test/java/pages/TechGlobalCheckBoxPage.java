@@ -10,7 +10,7 @@ import java.util.List;
 public class TechGlobalCheckBoxPage extends TechGlobalBasePage{
 
     public TechGlobalCheckBoxPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
+        super();
     }
 
     @FindBy(css= "#checkbox-button-group_1 label")
