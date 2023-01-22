@@ -11,13 +11,13 @@ public class TechGlobalDropdownsPage extends TechGlobalBasePage{
         super();
     }
 
-    @FindBy
+    @FindBy(xpath = "//select[@id='product_dropdown']/../p")
     public WebElement productDropdownLabel;
-    @FindBy
+    @FindBy(id = "product_dropdown")
     public WebElement productDropdown;
-    @FindBy
+    @FindBy(xpath = "//select[@id='color_dropdown']/../p")
     public WebElement colorDropdownLabel;
-    @FindBy
+    @FindBy(id = "color_dropdown")
     public WebElement colorDropdown;
     @FindBy(xpath = "//div[@id='shipment_dropdown']/../p")
     public WebElement deliveryDropdownLabel;
@@ -25,11 +25,11 @@ public class TechGlobalDropdownsPage extends TechGlobalBasePage{
     public WebElement deliveryDropdown;
     @FindBy(css = "#shipment_dropdown span")
     public List<WebElement> deliveryDropdownOptions;
-    @FindBy
+    @FindBy(id = "submit")
     public WebElement submitButton;
-    @FindBy
+    @FindBy(css = ".title")
     public WebElement resultTag;
-    @FindBy
+    @FindBy(id = "result")
     public WebElement resultMessage;
 
 }

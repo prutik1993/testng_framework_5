@@ -16,9 +16,11 @@ public class TechGlobalBase{
     TechGlobalRadioButtonsPage techGlobalRadioButtonsPage;
     TechGlobalCheckBoxPage techGlobalCheckBoxPage;
     TechGlobalDropdownsPage techGlobalDropdownsPage;
+    TechGlobalMultipleWindowsPage techGlobalMultipleWindowsPage;
 
 
     @BeforeMethod
+
     public void setup() {
         driver = Driver.getDriver();
 
