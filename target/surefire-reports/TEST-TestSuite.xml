@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="143.443" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="223.316" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home/jre/lib"/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -PRegression"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test -PRegression"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -63,13 +63,19 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="validateCheckboxes" classname="scripts.TechGlobalCheckBoxTest" time="7.729"/>
-  <testcase name="validateCheckboxes2" classname="scripts.TechGlobalCheckBoxTest" time="7.237"/>
-  <testcase name="dynamicElementsTest" classname="scripts.TechGlobalDynamicElementsTest" time="2.642"/>
-  <testcase name="validateFrontendTestingURL" classname="scripts.TechGlobalFrontendTestingHomeTest" time="1.532"/>
-  <testcase name="validateTechGlobalHeaderDropdownOptions" classname="scripts.TechGlobalHeaderTest" time="0.96"/>
-  <testcase name="languageRadioButtons" classname="scripts.TechGlobalRadioButtonTest" time="3.488"/>
-  <testcase name="javaButtonIsSelected" classname="scripts.TechGlobalRadioButtonTest" time="3.149"/>
-  <testcase name="practiceMoreButtons" classname="scripts.TechGlobalRadioButtonTest" time="3.653"/>
-  <testcase name="validateRedBox" classname="scripts.TechGlobalWaitsPageTest" time="41.464"/>
+  <testcase name="validateCheckboxes" classname="scripts.TechGlobalCheckBoxTest" time="7.329"/>
+  <testcase name="validateCheckboxes2" classname="scripts.TechGlobalCheckBoxTest" time="7.382"/>
+  <testcase name="dynamicElementsTest" classname="scripts.TechGlobalDynamicElementsTest" time="2.276"/>
+  <testcase name="validateFrontendTestingURL" classname="scripts.TechGlobalFrontendTestingHomeTest" time="1.394"/>
+  <testcase name="validateTechGlobalHeaderDropdownOptions" classname="scripts.TechGlobalHeaderTest" time="0.964"/>
+  <testcase name="languageRadioButtons" classname="scripts.TechGlobalRadioButtonTest" time="3.514"/>
+  <testcase name="javaButtonIsSelected" classname="scripts.TechGlobalRadioButtonTest" time="3.725"/>
+  <testcase name="practiceMoreButtons" classname="scripts.TechGlobalRadioButtonTest" time="3.574"/>
+  <testcase name="validateRedBox" classname="scripts.TechGlobalWaitsPageTest" time="40.671"/>
+  <testcase name="SelectDeliveryOption" classname="scripts.TechGlobalDropdownsTest" time="1.459"/>
+  <testcase name="selectColorOption" classname="scripts.TechGlobalDropdownsTest" time="1.149"/>
+  <testcase name="selectProductOption" classname="scripts.TechGlobalDropdownsTest" time="0.197"/>
+  <testcase name="validateTheItemSelected" classname="scripts.TechGlobalDropdownsTest" time="1.792"/>
+  <testcase name="validateTheAppleLink" classname="scripts.TechGlobalMultipleWindowsTest" time="3.073"/>
+  <testcase name="validateLinkURLs" classname="scripts.TechGlobalMultipleWindowsTest" time="15.744"/>
 </testsuite>
