@@ -15,4 +15,13 @@ public class TechGlobalAlertsPage extends TechGlobalBasePage{
 
     @FindBy(id = "action")
     public WebElement result;
+
+    public void clickOnAlert(String text){
+        for (WebElement alertButton : alertButtons) {
+            if(alertButton.getText().equals(text)){
+                alertButton.click();
+                break;
+            }
+        }
+    }
 }
