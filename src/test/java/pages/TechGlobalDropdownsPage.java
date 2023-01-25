@@ -32,4 +32,6 @@ public class TechGlobalDropdownsPage extends TechGlobalBasePage{
     @FindBy(id = "result")
     public WebElement resultMessage;
 
+
+
 }
