@@ -7,7 +7,7 @@ public class _07_Groups {
     Smoke test cases = 2
     Regression test cases = 3
     Integration test cases = 2
-     */
+
 
     @Test(groups = "Smoke")
     public void test1(){
@@ -38,4 +38,6 @@ public class _07_Groups {
     public void test6(){
         System.out.println("This is a INTEGRATION test case");
     }
+
+     */
 }
