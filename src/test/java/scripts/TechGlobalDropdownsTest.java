@@ -44,6 +44,7 @@ public class TechGlobalDropdownsTest extends TechGlobalBase{
         DropdownHandler.selectByIndex(techGlobalDropdownsPage.colorDropdown, 1);
 
         Waiter.pause(1);
+
     }
     /*
     Go to TechGlobal Training app

@@ -13,16 +13,17 @@ public class TechGlobalWaitsPageTest extends TechGlobalBase {
     public void setPage(){
         techGlobalFrontendTestingHomePage = new TechGlobalFrontendTestingHomePage();
         techGlobalWaitsPage = new TechGlobalWaitsPage();
+        techGlobalFrontendTestingHomePage.getFrontendTestingPage();
+        techGlobalFrontendTestingHomePage.clickOnCard(3);
     }
 
     @Test(priority = 1, description = "Validate red box visible")
     public void validateRedBox(){
-        techGlobalFrontendTestingHomePage.getFrontendTestingPage();
-        techGlobalFrontendTestingHomePage.clickOnCard(3);
-        Waiter.pause(3);
+        
+
         //techGlobalWaitsPage.redBoxButton.click();
         techGlobalWaitsPage.blueBoxButton.click();
-        Waiter.pause(2);
+
 
         //Assert.assertTrue(techGlobalWaitsPage.redBox.isDisplayed());
 
