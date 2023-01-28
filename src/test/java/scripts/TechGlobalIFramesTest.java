@@ -7,7 +7,7 @@ import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalIFramesPage;
 
 public class TechGlobalIFramesTest extends TechGlobalBase{
-    /*
+    /**
     Go to https://techglobal-training.netlify.app/
     Click on “Practices” dropdown in the header
     Select the “Frontend Testing” option
@@ -24,12 +24,12 @@ public class TechGlobalIFramesTest extends TechGlobalBase{
     @Test(priority = 1, description = "Validating input header test")
     public void validateInputText(){
 
-        driver.switchTo().frame(techGlobalIFramesPage.IFrameId);
+        driver.switchTo().frame(techGlobalIFramesPage.iFrameId);
         Assert.assertTrue(techGlobalIFramesPage.inputHeader.isDisplayed());
         Assert.assertEquals(techGlobalIFramesPage.inputHeader.getText(),
                 "Please fill out your information below");
     }
-    /*
+    /**
     Click on “Practices” dropdown in the header
     Select the “Frontend Testing” option
     Click on the “IFrames” card
@@ -40,16 +40,30 @@ public class TechGlobalIFramesTest extends TechGlobalBase{
      */
     @Test(priority = 2, description = "Validating the result of inputs")
     public void validateInputs(){
-        driver.switchTo().frame(techGlobalIFramesPage.IFrameId);
-        Assert.assertTrue(techGlobalIFramesPage.firstName.isDisplayed());
-        Assert.assertTrue(techGlobalIFramesPage.lastName.isDisplayed());
-        techGlobalIFramesPage.firstName.sendKeys("John");
-        techGlobalIFramesPage.lastName.sendKeys("Doe");
-        Assert.assertTrue(techGlobalIFramesPage.submitButton.isDisplayed());
-        Assert.assertTrue(techGlobalIFramesPage.submitButton.isEnabled());
+//        driver.switchTo().frame(techGlobalIFramesPage.IFrameId);
+//        Assert.assertTrue(techGlobalIFramesPage.firstName.isDisplayed());
+//        Assert.assertTrue(techGlobalIFramesPage.lastName.isDisplayed());
+//        techGlobalIFramesPage.firstName.sendKeys("John");
+//        techGlobalIFramesPage.lastName.sendKeys("Doe");
+//        Assert.assertTrue(techGlobalIFramesPage.submitButton.isDisplayed());
+//        Assert.assertTrue(techGlobalIFramesPage.submitButton.isEnabled());
+//        techGlobalIFramesPage.submitButton.click();
+//        driver.switchTo().parentFrame(); // driver.switchTo().defaultContent();
+//        Assert.assertTrue(techGlobalIFramesPage.resultText.isDisplayed());
+//        Assert.assertEquals(techGlobalIFramesPage.resultText.getText(),"You entered: John Doe");
+
+        driver.switchTo().frame(techGlobalIFramesPage.iFrameId);
+
+        String[] credentials = {"John", "Doe"};
+
+        for (int i = 0; i < credentials.length; i++) {
+            techGlobalIFramesPage.inputFields.get(i).sendKeys(credentials[i]);
+        }
+
         techGlobalIFramesPage.submitButton.click();
-        driver.switchTo().parentFrame();
-        Assert.assertTrue(techGlobalIFramesPage.resultText.isDisplayed());
-        Assert.assertEquals(techGlobalIFramesPage.resultText.getText(),"You entered: John Doe");
+
+        driver.switchTo().defaultContent();
+
+        Assert.assertEquals(techGlobalIFramesPage.resultText.getText(), "You entered: " + credentials[0] + " " + credentials[1]);
     }
 }

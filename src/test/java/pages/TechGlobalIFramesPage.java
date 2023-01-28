@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class TechGlobalIFramesPage extends TechGlobalBasePage{
     public TechGlobalIFramesPage(){
         super();
@@ -12,7 +14,7 @@ public class TechGlobalIFramesPage extends TechGlobalBasePage{
     public WebElement inputHeader;
 
     @FindBy(css = "#form_frame")
-    public WebElement IFrameId;
+    public WebElement iFrameId;
     @FindBy(id = "first_name")
     public WebElement firstName;
      @FindBy(id = "last_name")
@@ -21,5 +23,7 @@ public class TechGlobalIFramesPage extends TechGlobalBasePage{
     public WebElement submitButton;
      @FindBy(id = "result")
     public WebElement resultText;
+     @FindBy(xpath = "//input")
+    public List<WebElement> inputFields;
 
 }
