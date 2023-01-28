@@ -22,6 +22,9 @@ public class TechGlobalBase {
     TechGlobalAlertsPage techGlobalAlertsPage;
     TechGlobalDynamicTablesPage techGlobalDynamicTablesPage;
     TechGlobalIFramesPage techGlobalIFramesPage;
+    TechGlobalFileUploadPage techGlobalFileUploadPage;
+    TechGlobalFileDownloadPage techGlobalFileDownloadPage;
+
 
     @BeforeMethod
     public void setup() {
