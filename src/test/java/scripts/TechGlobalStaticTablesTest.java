@@ -8,6 +8,8 @@ import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalStaticTablesPage;
 import utilities.TableData;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -71,6 +73,33 @@ public class TechGlobalStaticTablesTest  extends TechGlobalBase{
         List<WebElement> countryColumn = TableData.getTableColumn(driver,4);
         for (int i = 0; i < countryColumn.size(); i++) {
             Assert.assertEquals(countryColumn.get(i).getText(), countryColumnText[i]);
+        }
+    }
+    /**
+     * TEST 4
+     * Go to https://techglobal-training.netlify.app/
+     * Click on "Practices" dropdown in the header
+     * Select the "Frontend Testing" option
+     * Click on the "Static Tables" card
+     * Check that the entire table has the correct values for "Rank", "Company", "Employees", and "Country"
+     */
+    @Test(priority = 4, description = "Validate all cells")
+    public void validateAllCells(){
+        List<List<WebElement>> tableData = techGlobalStaticTablesPage.getTableData();
+
+        List<List<String>> table = new ArrayList<>();
+        table.add(Arrays.asList("1", "Amazon", "1,523,000", "USA"));
+        table.add(Arrays.asList("2", "Alibaba", "245,700", "China"));
+        table.add(Arrays.asList("3", "Microsoft", "221,000", "USA"));
+        table.add(Arrays.asList("4", "Apple", "154,000", "USA"));
+        table.add(Arrays.asList("5", "Samsung", "116,915", "S. Korea"));
+
+        for (int i = 0; i < tableData.size(); i++) {
+            for (int j = 0; j < tableData.get(i).size(); j++) {
+                Assert.assertEquals(tableData.get(i).get(j).getText(), table.get(i).get(j));
+                System.out.print(tableData.get(i).get(j).getText() + " | ");
+            }
+            System.out.println();
         }
     }
 }
