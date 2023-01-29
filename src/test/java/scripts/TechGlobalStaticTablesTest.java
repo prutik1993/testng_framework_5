@@ -1,0 +1,76 @@
+package scripts;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import pages.TechGlobalFrontendTestingHomePage;
+import pages.TechGlobalStaticTablesPage;
+import utilities.TableData;
+
+import java.util.List;
+import java.util.stream.IntStream;
+
+public class TechGlobalStaticTablesTest  extends TechGlobalBase{
+    @BeforeMethod
+    public void setPage(){
+        techGlobalFrontendTestingHomePage = new TechGlobalFrontendTestingHomePage();
+        techGlobalStaticTablesPage = new TechGlobalStaticTablesPage();
+        techGlobalFrontendTestingHomePage.getFrontendTestingPage();
+        techGlobalFrontendTestingHomePage.clickOnCard("Static Tables");
+    }
+    /**
+     * TEST 1
+     * Verify the headers of the table
+     * Go to https://techglobal-training.netlify.app/
+     * Click on “Practices” dropdown in the header
+     * Select the “Frontend Testing” option
+     * Click on the “Static Tables” card
+     * Check that the headers of the table are “Rank”, “Company”, “Employees”, and “Country”
+     */
+    @Test(priority = 1, description = "Validate satic tables")
+    public void validateStaticTables(){
+        String[] headerText = {"Rank", "Company", "Employees", "Country"};
+//        for (int i = 0; i < techGlobalStaticTablesPage.tableHeader.size(); i++) {
+//            Assert.assertEquals(techGlobalStaticTablesPage.tableHeader.get(i).getText(),headerText[i]);
+//        }
+        IntStream.range(0,headerText.length).forEach
+                (i ->Assert.assertEquals(techGlobalStaticTablesPage.tableHeader.get(i).getText(),headerText[i]));
+    }
+    /**
+     * Go to https://techglobal-training.netlify.app/
+     * Click on “Practices” dropdown in the header
+     * Select the “Frontend Testing” option
+     * Click on the “Static Tables” card
+     * Check that first row of the table has the values “1", “Amazon”, “1,523,000", and “USA”
+     * Verify the columns of the table
+     */
+    @Test(priority = 2, description = "Validate first row of the table")
+    public void validateRow(){
+        String[] firstRowText = {"1", "Amazon", "1,523,000", "USA"};
+        List<WebElement> tableRow = TableData.getTableRow(driver,1);
+
+        for (int i = 0; i < tableRow.size(); i++) {
+            Assert.assertEquals(tableRow.get(i).getText(),firstRowText[i]);
+        }
+//        IntStream.range(0,firstRowText.length).forEach
+//                (i ->Assert.assertEquals(techGlobalStaticTablesPage.firstRow.get(i).getText(),firstRowText[i]));
+    }
+    /**
+     * TEST 3
+     * Go to https://techglobal-training.netlify.app/
+     * Click on “Practices” dropdown in the header
+     * Select the “Frontend Testing” option
+     * Click on the “Static Tables” card
+     * Check that the “Country” column of the table has the values “USA”, “China”, “USA”, “USA”, “S. Korea”
+     * Verify the entire table
+     */
+    @Test(priority = 3, description = "Validate country column")
+    public void validateCountryColumn(){
+        String[]  countryColumnText= {"USA", "China", "USA", "USA", "S. Korea"};
+        List<WebElement> countryColumn = TableData.getTableColumn(driver,4);
+        for (int i = 0; i < countryColumn.size(); i++) {
+            Assert.assertEquals(countryColumn.get(i).getText(), countryColumnText[i]);
+        }
+    }
+}
