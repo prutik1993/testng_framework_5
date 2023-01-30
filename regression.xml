@@ -40,6 +40,14 @@
             </class>
             <class name="scripts.TechGlobalDropdownsTest"/>
             <class name="scripts.TechGlobalMultipleWindowsTest"/>
+            <class name="scripts.TechGlobalSortableTablesTest"/>
+            <class name="scripts.TechGlobalFileDownloadTest"/>
+            <class name="scripts.TechGlobalStaticTablesTest"/>
+            <class name="scripts.TechGlobalCalendarTest"/>
+            <class name="scripts.TechGlobalAlertsTest"/>
+            <class name="scripts.TechGlobalDynamicTablesTest"/>
+            <class name="scripts.TechGlobalFileUploadTest"/>
+            <class name="scripts.TechGlobalIFramesTest"/>
         </classes>
     </test>
 </suite>
