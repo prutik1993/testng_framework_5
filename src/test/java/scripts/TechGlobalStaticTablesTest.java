@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalStaticTablesPage;
-import utilities.TableData;
+import utilities.TableHandler;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,7 +50,7 @@ public class TechGlobalStaticTablesTest  extends TechGlobalBase{
     @Test(priority = 2, description = "Validate first row of the table")
     public void validateRow(){
         String[] firstRowText = {"1", "Amazon", "1,523,000", "USA"};
-        List<WebElement> tableRow = TableData.getTableRow(driver,1);
+        List<WebElement> tableRow = TableHandler.getTableRow(driver,1);
 
         for (int i = 0; i < tableRow.size(); i++) {
             Assert.assertEquals(tableRow.get(i).getText(),firstRowText[i]);
@@ -70,7 +70,7 @@ public class TechGlobalStaticTablesTest  extends TechGlobalBase{
     @Test(priority = 3, description = "Validate country column")
     public void validateCountryColumn(){
         String[]  countryColumnText= {"USA", "China", "USA", "USA", "S. Korea"};
-        List<WebElement> countryColumn = TableData.getTableColumn(driver,4);
+        List<WebElement> countryColumn = TableHandler.getTableColumn(driver,4);
         for (int i = 0; i < countryColumn.size(); i++) {
             Assert.assertEquals(countryColumn.get(i).getText(), countryColumnText[i]);
         }

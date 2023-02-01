@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalSortableTablesPage;
-import utilities.TableData;
+import utilities.TableHandler;
 import utilities.TextHandler;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class TechGlobalSortableTablesTest extends TechGlobalBase{
     public void validateSortAscByQuantity(){
         techGlobalSortableTablesPage.ascByQuantity.click();
 
-        List<WebElement> quantityColumnElements = TableData.getTableColumn(driver,1);
+        List<WebElement> quantityColumnElements = TableHandler.getTableColumn(driver,1);
 
         List<Integer> quantityColumn = TextHandler.returnListOfInteger(quantityColumnElements);
 
@@ -53,7 +53,7 @@ public class TechGlobalSortableTablesTest extends TechGlobalBase{
     public void validateSortedDescendingOrder(){
         techGlobalSortableTablesPage.descByQuantity.click();
 
-        List<WebElement> quantityColumnElements = TableData.getTableColumn(driver,1);
+        List<WebElement> quantityColumnElements = TableHandler.getTableColumn(driver,1);
         List<Integer> quantityColumn = TextHandler.returnListOfInteger(quantityColumnElements);
 
         for (int i = 1; i < quantityColumn.size(); i++) {
@@ -73,14 +73,13 @@ public class TechGlobalSortableTablesTest extends TechGlobalBase{
     public void validateAscendingOrderInPriceColumn(){
         techGlobalSortableTablesPage.ascByPrice.click();
 
-        List<WebElement> priceColumnElements = TableData.getTableColumn(driver,3);
+        List<WebElement> priceColumnElements = TableHandler.getTableColumn(driver,3);
         List<Integer> priceColumn = TextHandler.returnListOfInteger(priceColumnElements);
 
         for (int i = 0; i < priceColumn.size()-1; i++) {
             Assert.assertTrue(priceColumn.get(i) <= priceColumn.get(i + 1));
         }
     }
-
     /**
      * TEST4
      * Go to https://techglobal-training.netlify.app/
@@ -94,7 +93,7 @@ public class TechGlobalSortableTablesTest extends TechGlobalBase{
     public void validateDescendingOrderInPriceColumn(){
         techGlobalSortableTablesPage.descByPrice.click();
 
-        List<WebElement> priceColumnElements = TableData.getTableColumn(driver,3);
+        List<WebElement> priceColumnElements = TableHandler.getTableColumn(driver,3);
         List<Integer> priceColumn = TextHandler.returnListOfInteger(priceColumnElements);
 
         for (int i = 0; i < priceColumn.size()-1; i++) {
