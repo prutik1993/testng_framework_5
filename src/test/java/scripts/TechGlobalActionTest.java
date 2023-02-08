@@ -150,7 +150,19 @@ public class TechGlobalActionTest extends TechGlobalBase{
 
         Assert.assertEquals(techGlobalActionPage.inputBox.getAttribute("value"),"TECHGLOBALTECHGLOBAL");
 
+    } @Test(priority = 4,description = "Validate keyboard actions and copy and paste actions")
+    public void practiceForMe(){
+        actions.moveToElement(techGlobalActionPage.inputBox)
+                .sendKeys("hello")
+                .doubleClick()
+                .keyDown(Keys.COMMAND).sendKeys("c")
+                .sendKeys("v")
+                .sendKeys("v")
+                .keyUp(Keys.COMMAND)
+                .perform();
     }
+
+
 
 
 }

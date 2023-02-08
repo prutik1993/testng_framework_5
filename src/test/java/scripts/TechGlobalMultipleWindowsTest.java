@@ -39,7 +39,6 @@ public class TechGlobalMultipleWindowsTest extends TechGlobalBase{
             techGlobalMultipleWindowsPage.links.get(i).click();
 
             WindowHandler.switchToChildWindow();
-
             Assert.assertEquals(driver.getCurrentUrl(), urls[i]);
             driver.close();
             WindowHandler.switchBackToParentWindow();

@@ -48,6 +48,7 @@
             <class name="scripts.TechGlobalDynamicTablesTest"/>
             <class name="scripts.TechGlobalFileUploadTest"/>
             <class name="scripts.TechGlobalIFramesTest"/>
+            <class name="scripts.TechGlobalActionTest"/>
         </classes>
     </test>
 </suite>
